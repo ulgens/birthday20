@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body,
+div,
+h1,
+h2,
+h3,
+p,
+header,
+ul,
+li,
+table,
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+body {
+
+    /*width: 100%;*/
+    min-height: 100vh;
+    position: relative;
+    padding: 0px;
+    background-color: #E7E8E6;
+    font-family: "Inter", serif;
+}
+
+
+/* CONTENT FOR ALL PAGES */
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    @media only screen and (min-width: 800px) {
+        min-width: 800px;
+        max-width: 1200px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+    }
+
+    article {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+header {
+
+  width: 100%;
+  height: 100%;
+  
+  color: #FFF;
+  background-color: #222;
+  
+  a, a:visited, a:active {
+    text-shadow: #000 1px 0 2px;
+    color: #FFF;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .logo-and-nav {
+    display: flex;    
+    align-items: center;
+    width: 100%;
+    column-gap: 20px;
+    .language {
+      margin-left: auto;
+      margin-right: 50px;
+      white-space: nowrap;
+    }
+    a .icon {
+      width: 30px;
+      display: inline-block;
+      margin-bottom: -5px;
+    }
+    font-size: 1.8em;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 25px;
+    align-items: center;
+
+  }
+
+  .logo {
+    img {
+      display: block;
+      width: 150px;
+    }
+  }
+
+  .contact-button {
+    display: none;
+  }
+
+  .img-background {
+    background: url("/images/photo04.jpeg") no-repeat center center;
+    background-size: cover;
+    display: block;
+    margin: auto auto;
+    min-height: 500px;
+  }
+  
+  &.vision {
+    .img-background {
+      background-image: url("/images/photo03.jpeg");
+    }  
+  }
+  &.services {
+    .img-background {
+      background-image: url("/images/photo01.jpeg");
+    }
+  }
+  &.presentation {
+    .img-background {
+      background-image: url("/images/photo07.jpeg");
+    }
+  }
+  &.contact {
+    .img-background {
+      background-image: url("/images/photo05.jpeg");
+    }
+  }
+  
+  &.main {
+    .contact-button {
+      display: block;
+    }
+  }
+  
+  .hero {
+  
+    padding: 40px 0;
+  
+    @media only screen and (max-width: 1200px) {
+        margin: 0 20px;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin: 50px 0;
+    }
+    p.subtitle {
+      font-size: 3em;
+      margin-bottom: 40px;
+    }
+    p.subsubtitle {
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    
+    .highlight-text {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    
+    .button {
+      background-color: #152210;
+      border-radius: 5px;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    
+  }
+
+}
+
+article {
+
+  margin: 40px 0;
+  font-size: 1.5em;
+  
+  h2 {
+    font-size: 2em;
+    margin: 20px 0;
+  }
+
+  p {
+    max-width: 800px;
+    line-height: 150%;
+    margin: 20px 0;
+  }
+  
+  ul {
+    margin: 20px 0;
+    padding-left: 40px;
+  }
+
+  img.icon {
+    width: 50px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: -20px;
+  }
+  
+  .icon-link {
+    line-height: 65px;
+    color: #000;
+    text-decoration: none;
+  }
+
+}
+
+
+footer {
+
+  margin-top: 30px;
+  background-color: #242623;
+  color: #FFF;
+  padding: 50px 0;
+
+  font-size: 1.4em;
+
+  h5 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
+
+  a {
+    color: #fff;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    line-height: 150%;
+  }
+  
+  p.minor {
+    font-size: 0.8em;
+    color: #ccc;
+  }
+
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    width: 100%;
+    column-gap: 50px;
+    align-items: center;
+    align-content: space-between;
+    
+    .footer-column {
+      width: 33%;
+    }
+    
+    .opening-hours {
+      text-align: right;
+    }
+    
+    .logo {
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .footer-columns {
+      display: block;
+      margin: 20px;
+      padding: 0;
+      column-gap: 0;
+      .logo {
+        img {
+          display: inline-block;
+          width: 50%;
+        }
+      }
+     .footer-column {
+        margin-top: 20px;
+        width: auto;
+        text-align: center;
+     }
+     .opening-hours {
+        text-align: center;
+     }
+    }
+
+   
+}
+
+}

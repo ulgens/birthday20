@@ -87,7 +87,6 @@ header {
     width: 100%;
     column-gap: 25px;
     align-items: center;
-
   }
 
   .logo {
@@ -102,8 +101,11 @@ header {
   }
 
   .img-background {
-    background: url("/images/photo04.jpeg") no-repeat center center;
+    background-image: url("/images/django-cake.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
     display: block;
     margin: auto auto;
     min-height: 500px;

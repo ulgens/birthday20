@@ -1,0 +1,9 @@
+services:
+  serve:
+    # See: https://docker.hugomods.com/docs/tags/
+    image: hugomods/hugo:base-0.147.9
+    command: server
+    volumes:
+      - ".:/src"
+    ports:
+      - "1313:1313"

@@ -1,6 +1,7 @@
 services:
   serve:
-    image: floryn90/hugo:ext-alpine
+    # See: https://docker.hugomods.com/docs/tags/
+    image: hugomods/hugo:base-0.147.9
     command: server
     volumes:
       - ".:/src"

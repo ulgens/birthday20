@@ -6,14 +6,14 @@
 
   {{ hugo.Generator }}
 
-	<title>Django 20 years Birthday: {{ .Title }}</title>
+	<title>Django 20-years Birthday: {{ .Title }}</title>
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
   {{ block "extrameta" . }}{{ end }}
 
   {{ $sass := resources.Get "sass/style.scss" }}
-  {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  {{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
   {{ template "_internal/twitter_cards.html" . }}
@@ -44,10 +44,10 @@
 <body class="{{ .Params.cssClassSuffix }}">
 
   <header class="{{ .Params.cssClassSuffix }}">
-    <div class="img-background">
+    <div class="nav-container">
     
       <div class="logo-and-nav container">
-        <a href="/" class="logo"><img src="/images/logo.svg" /></a>
+        <a href="/" class="logo"><img src="/images/balloon-logo.png" /></a>
         <nav class="main-nav">
 	      {{ with .Site.Menus.main }}
 			      {{ range . }}
@@ -56,40 +56,37 @@
 	      {{ end }}
 
         </nav>
-        {{ range $.Site.Home.AllTranslations }}
-          {{ if (eq $.Site.LanguageCode .Language.LanguageCode) }}
-          {{ else }}
-          <a href="{{ .Permalink }}" class="language" title="{{ .Language.LanguageCode }}">
-            Language <img src="/images/flag.png" class="icon">
-          </a>
-          {{ end }}
-        {{ end }}
       </div>
+    </div>
       
-      <div class="hero container">
+    <div class="container">
+      <div class="hero">
         <h1>
-          <span class="highlight-text">{{ .Title }}</span>
+          {{ .Title }}
         </h1>
         {{ if .Params.subtitle }}
         <p class="subtitle">
-          <span class="highlight-text">{{ .Params.subtitle }}</span>
+          {{ .Params.subtitle }}
         </p>
         {{ end }}
         {{ if .Params.subsubtitle }}
         <p class="subsubtitle">
-          <span class="highlight-text">{{ .Params.subsubtitle }}</span>
+          {{ .Params.subsubtitle }}
         </p>
         {{ end }}
       </div>
     </div>
+
   </header>
 
-  <div class="container {{ .Params.cssClassSuffix }}">
+  <main>
+  <div class="container container-main {{ .Params.cssClassSuffix }}">
     <article class="{{ .Params.cssClassSuffix }}">
   	  {{ block "main" . }}{{ end }}
   	</article>
 
   </div>
+  </main>
 
 
   <footer class="{{ .Params.cssClassSuffix }}">
@@ -115,17 +112,17 @@
           </p>
         </div>
         <div class="footer-column">
-          <a href="/" class="logo"><img src="/images/logo.svg" /></a>
+          <a href="/" class="logo"><img src="/images/pony-with-balloons.png" /></a>
         </div>
         <div class="footer-column opening-hours">
         
-          <h5>Contributions</h5>
+          <h5>Credits</h5>
           <p>
-            Illustrations: (...)<br>
-            Website: (...)
+            Django Birthday Graphics:<br>Sangeeta Jadoonanan <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a><br>
           </p>
           <p>
-            Got an idea? <a href="">Contribute to the website</a>.
+            Website: <a href="https://github.com/django/birthday20/graphs/contributors">django/birthday20 contributors</a><br>
+            Got an idea? <a href="https://github.com/django/birthday20">Contribute to the website</a>.
           </p>
         </div>
       

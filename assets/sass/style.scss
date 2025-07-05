@@ -6,6 +6,7 @@ $base-color-black: #000;
 $theme-color-primary: #00f8a5;
 $theme-color-secondary: #44b0ff;
 
+html,
 body,
 div,
 h1,
@@ -41,21 +42,21 @@ body {
 /* CONTENT FOR ALL PAGES */
 .container {
     margin: 0 auto;
-    padding: 20px;
     @media only screen and (min-width: 800px) {
         min-width: 800px;
         max-width: 1200px;
     }
 
     @media only screen and (max-width: 800px) {
-        width: 100%;
+        width: auto;
     }
 
     article {
-        img {
-            display: block;
-            width: 100%;
-        }
+      padding: 0 20px;
+      img {
+          display: block;
+          width: 100%;
+      }
     }
 }
 
@@ -80,6 +81,7 @@ header {
     border-width: 5px 0 5px 0;
     border-color: #000;
     border-style: solid;
+    padding: 20px;
   }
 
   .logo-and-nav {
@@ -107,6 +109,15 @@ header {
       width: 150px;
     }
   }
+  
+  @media only screen and (max-width: 800px) {
+    .logo img {
+      margin-right: -20px; // This is empty space in the image
+    }
+  
+  }
+
+  
   
   .hero {
   
@@ -182,7 +193,7 @@ footer {
 
   margin-top: 500px;
   color: $base-color-fg;
-  padding: 50px 0;
+  background: rgba(0, 0, 0, 0.8);
 
   font-size: 1.4em;
 
@@ -206,6 +217,7 @@ footer {
   }
 
   .footer-columns {
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
@@ -232,7 +244,6 @@ footer {
   @media only screen and (max-width: 800px) {
     .footer-columns {
       display: block;
-      margin: 20px;
       padding: 0;
       column-gap: 0;
       .logo {

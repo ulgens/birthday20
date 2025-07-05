@@ -1,0 +1,8 @@
+services:
+  serve:
+    image: floryn90/hugo:ext-alpine
+    command: server
+    volumes:
+      - ".:/src"
+    ports:
+      - "1313:1313"

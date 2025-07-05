@@ -28,7 +28,7 @@ languages:
     menu:
       main:
       - name: "Events"
-        url: "/events/"
+        url: "/"
         weight: 1
       - name: "Add event"
         url: "/add-event/"

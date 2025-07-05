@@ -30,6 +30,9 @@ languages:
       - name: "Events"
         url: "/events/"
         weight: 1
-      - name: "Shop"
-        url: "/shop/"
+      - name: "Add event"
+        url: "/add-event/"
         weight: 2
+      - name: "Gifts"
+        url: "/gifts/"
+        weight: 3

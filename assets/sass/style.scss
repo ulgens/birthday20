@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+// dark themed
+$base-color-fg: #fff;
+$base-color-bg: #222;
+$base-color-black: #000;
+
+$theme-color-primary: #00f8a5;
+$theme-color-secondary: #44b0ff;
 
 body,
 div,
@@ -18,12 +24,17 @@ menu {
 /* BODY */
 body {
 
-    /*width: 100%;*/
-    min-height: 100vh;
-    position: relative;
-    padding: 0px;
-    background-color: #E7E8E6;
-    font-family: "Inter", serif;
+  /*width: 100%;*/
+  min-height: 100vh;
+  position: relative;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  background-image: url("/images/django-cake.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: $base-color-bg;
 }
 
 
@@ -53,14 +64,22 @@ header {
   width: 100%;
   height: 100%;
   
-  color: #FFF;
-  background-color: #222;
+  color: $base-color-fg;
   
   a, a:visited, a:active {
-    text-shadow: #000 1px 0 2px;
-    color: #FFF;
+    text-shadow: $base-color-black 1px 0 2px;
+    font-weight: bold;
+    color: $base-color-fg;
     text-decoration: none;
     white-space: nowrap;
+  }
+
+  .nav-container {
+    background-color: $theme-color-primary;
+    margin-top: 70px;
+    border-width: 5px 0 5px 0;
+    border-color: #000;
+    border-style: solid;
   }
 
   .logo-and-nav {
@@ -68,17 +87,10 @@ header {
     align-items: center;
     width: 100%;
     column-gap: 20px;
-    .language {
-      margin-left: auto;
-      margin-right: 50px;
-      white-space: nowrap;
-    }
-    a .icon {
-      width: 30px;
-      display: inline-block;
-      margin-bottom: -5px;
-    }
     font-size: 1.8em;
+    .logo {
+      margin: -70px 0;
+    }
   }
 
   .main-nav {
@@ -95,60 +107,21 @@ header {
       width: 150px;
     }
   }
-
-  .contact-button {
-    display: none;
-  }
-
-  .img-background {
-    background-image: url("/images/django-cake.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-attachment: fixed;
-    display: block;
-    margin: auto auto;
-    min-height: 500px;
-  }
-  
-  &.vision {
-    .img-background {
-      background-image: url("/images/photo03.jpeg");
-    }  
-  }
-  &.services {
-    .img-background {
-      background-image: url("/images/photo01.jpeg");
-    }
-  }
-  &.presentation {
-    .img-background {
-      background-image: url("/images/photo07.jpeg");
-    }
-  }
-  &.contact {
-    .img-background {
-      background-image: url("/images/photo05.jpeg");
-    }
-  }
-  
-  &.main {
-    .contact-button {
-      display: block;
-    }
-  }
   
   .hero {
   
-    padding: 40px 0;
+    margin: 40px 0;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
   
     @media only screen and (max-width: 1200px) {
-        margin: 0 20px;
+        margin: 0 0;
     }
 
     h1 {
       font-size: 4em;
-      margin: 50px 0;
+      margin: 20px 0;
     }
     p.subtitle {
       font-size: 3em;
@@ -159,25 +132,15 @@ header {
       margin-bottom: 40px;
     }
     
-    .highlight-text {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 10px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-    
-    .button {
-      background-color: #152210;
-      border-radius: 5px;
-      padding: 10px 15px;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 2em;
-      font-weight: bold;
-    }
-    
   }
 
+}
+
+main {
+  background-color: $theme-color-primary;
+  border-width: 5px 0 5px 0;
+  border-color: #000;
+  border-style: solid;
 }
 
 article {
@@ -208,10 +171,8 @@ article {
     margin-bottom: -20px;
   }
   
-  .icon-link {
-    line-height: 65px;
-    color: #000;
-    text-decoration: none;
+  a, a:active, a:visited {
+    color: darken($theme-color-secondary, 20%);
   }
 
 }
@@ -219,9 +180,8 @@ article {
 
 footer {
 
-  margin-top: 30px;
-  background-color: #242623;
-  color: #FFF;
+  margin-top: 500px;
+  color: $base-color-fg;
   padding: 50px 0;
 
   font-size: 1.4em;
@@ -232,7 +192,7 @@ footer {
   }
 
   a {
-    color: #fff;
+    color: $base-color-fg;
   }
   
   p {
@@ -284,9 +244,6 @@ footer {
      .footer-column {
         margin-top: 20px;
         width: auto;
-        text-align: center;
-     }
-     .opening-hours {
         text-align: center;
      }
     }

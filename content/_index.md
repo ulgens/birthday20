@@ -1,6 +1,6 @@
 ---
 title: "Happy birthday Django 🎂 🥳 ☺️ 🎁 🌈 🚀 💝 🤗 🦄 🎨"
-date: "2024-05-03"
+date: "2025-07-03"
 draft: false
 
 params:

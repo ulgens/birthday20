@@ -1,5 +1,42 @@
 {{- define "main" -}}
 
-  {{ .Content }}
+  <section>
+    <div class="container container-main {{ .Params.cssClassSuffix }}">
+      <article class="{{ .Params.cssClassSuffix }}">
+        {{ .Content }}
+    	</article>
+    </div>
+  </section>
+
+  <section class="events">
+    <div class="container container-events {{ .Params.cssClassSuffix }}">
+      <article class="{{ .Params.cssClassSuffix }}">
+        
+        <h1>Venue events</h1>
+        
+        {{ $events := (where (where (.Site.GetPage "/events").Pages.ByDate "Params.event_type" "venue") "published" "!=" "false") }}
+
+        <table class="event-table">
+          <thead>
+          <tr>
+            <th>When</th>
+            <th>Where</th>
+            <th>What</th>
+          </tr>
+          </thead>
+          <tbody>
+            {{ range sort $events ".Params.event_date" "asc" }}
+              <tr>
+                <td>{{ time.Format "2006-01-01" .Params.event_date }}</td>
+                <td>{{ .Params.city }}</td>
+                <td><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></td>
+              <tr>
+            {{ end }}
+          </tbody>
+        </table>
+
+    	</article>
+    </div>
+  </section>
 
 {{- end -}}

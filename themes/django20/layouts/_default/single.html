@@ -1,3 +1,9 @@
 {{ define "main" }}
-	{{ .Content }}
+  <section>
+    <div class="container container-main {{ .Params.cssClassSuffix }}">
+      <article class="{{ .Params.cssClassSuffix }}">
+        {{ .Content }}
+    	</article>
+    </div>
+  </section>
 {{ end }}

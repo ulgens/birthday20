@@ -1,6 +1,6 @@
 ---
 title: "Gifts"
-date: "2025-06-21"
+date: "2025-07-03"
 draft: false
 
 params:

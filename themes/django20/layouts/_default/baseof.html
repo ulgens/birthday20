@@ -47,11 +47,11 @@
     <div class="nav-container">
     
       <div class="logo-and-nav container">
-        <a href="/" class="logo"><img src="{{ "images/balloon-logo.png" | relURL }}"></a>
+        <a href="/" class="logo" title="Back to start"><img src="{{ "images/balloon-logo.png" | relURL }}"></a>
         <nav class="main-nav">
 	      {{ with .Site.Menus.main }}
 			      {{ range . }}
-			      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+			      <a href="{{ .URL | relURL }}" title="{{ .Name }}">{{ .Name }}</a>
 			      {{ end }}
 	      {{ end }}
 
@@ -80,12 +80,7 @@
   </header>
 
   <main>
-  <div class="container container-main {{ .Params.cssClassSuffix }}">
-    <article class="{{ .Params.cssClassSuffix }}">
   	  {{ block "main" . }}{{ end }}
-  	</article>
-
-  </div>
   </main>
 
 

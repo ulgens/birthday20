@@ -14,7 +14,7 @@
         
         <h1>Venue events</h1>
         
-        {{ $events := (where (where (.Site.GetPage "/events").Pages.ByDate "Params.event_type" "venue") "published" "!=" "false") }}
+        {{ $events := (where (.Site.GetPage "/events").Pages.ByDate "published" "!=" "false") }}
 
         <table class="event-table">
           <thead>

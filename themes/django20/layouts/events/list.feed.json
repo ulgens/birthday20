@@ -1,0 +1,41 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": {{ .Site.Title | jsonify  }},
+    "home_page_url": {{ .Permalink | jsonify }},
+    {{ with  .OutputFormats.Get "json" -}}
+    "feed_url": {{ .Permalink | jsonify  }},
+    {{- end }}
+    {{ if .Site.Params.author -}}
+    "author": {
+        "name": {{ .Site.Params.author | jsonify }}
+    },
+    {{- end }}
+    {{ if .Data.Pages }}
+    "items": [
+        {{ range $index, $element := first 1000 .Data.Pages -}}
+        {{ if eq $element.Section "events" -}}
+            {{ if $index }},{{end}} {
+                "title": {{ $element.Title | jsonify }},
+                "id": {{ $element.File.UniqueID | jsonify }},
+                "permalink": {{ $element.Permalink | jsonify }},
+                "url": {{ $element.Permalink | jsonify }},
+                "summary": {{ $element.Description | jsonify }},
+                "content_html": {{ $element.Content | jsonify }},
+                "content_text": {{ $element.Plain | jsonify }},
+                "date_published": {{ $element.Date.Format "2006-02-01T15:04:05-0700" | jsonify }},
+                "event_type": {{ $element.Params.event_type | jsonify }},
+                "event_date": {{ $element.Params.event_date | jsonify }},
+                "event_localtime": {{ $element.Params.event_localtime | jsonify }},
+                "event_tz": {{ $element.Params.event_localtime | jsonify }},
+                "city": {{ $element.Params.city | jsonify }},
+                "country": {{ $element.Params.country | jsonify }},
+                "venue_name": {{ $element.Params.venue_name | jsonify }},
+                "venue_address": {{ $element.Params.venue_address | jsonify }},
+                "latitude": {{ $element.Params.latitude | jsonify }},
+                "longitude": {{ $element.Params.longitude | jsonify }}
+            }
+            {{ end }}
+        {{ end }}
+    ]
+    {{ end }}
+}

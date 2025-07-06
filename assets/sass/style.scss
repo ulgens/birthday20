@@ -147,8 +147,16 @@ header {
 
 }
 
-main {
+section {
   background-color: $theme-color-primary;
+  border-width: 5px 0 5px 0;
+  border-color: #000;
+  border-style: solid;
+  margin-bottom: 20px;
+}
+
+section.events {
+  background-color: $theme-color-secondary;
   border-width: 5px 0 5px 0;
   border-color: #000;
   border-style: solid;
@@ -187,7 +195,6 @@ article {
   }
 
 }
-
 
 footer {
 
@@ -263,3 +270,32 @@ footer {
 }
 
 }
+
+.event-table {
+
+  margin-top: 10px;
+
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-collapse: collapse;
+
+  td, th {
+    padding: 8px;
+    margin: 0;
+  }
+
+  thead {
+    th {
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+}
+
+

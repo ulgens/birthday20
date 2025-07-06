@@ -22,10 +22,13 @@ menu {
     padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* BODY */
 body {
 
-  /*width: 100%;*/
   min-height: 100vh;
   position: relative;
   padding: 0px;

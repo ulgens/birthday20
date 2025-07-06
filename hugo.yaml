@@ -49,7 +49,7 @@ languages:
     menu:
       main:
       - name: "Events"
-        url: "/"
+        url: "/#events"
         weight: 1
       - name: "Add event"
         url: "/add-event/"

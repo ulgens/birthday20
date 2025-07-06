@@ -16,5 +16,9 @@ Django birthday events are being organized. This website is where it happens and
 
 ## A special call for proposals! BIRTHDAYS!
 
+To mark the event, we are calling for everyone to do a little thing! Meet new people, or gather old familiar friends - down at the pub, in a park, at your school or online. Nothing is too small.
+
+You can read more about hosting a birthday [here]({{< relref "/add-event.md" >}}).
+
 ## 20 years - what happened?
 

@@ -22,6 +22,9 @@
 	{{ with .OutputFormats.Get "RSS" -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
+	{{ with .OutputFormats.Get "JSON" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+	{{- end }}
   <link rel="apple-touch-icon" sizes="57x57" href="{{ "images/favicons/apple-icon-57x57.png" | relURL }}">
   <link rel="apple-touch-icon" sizes="60x60" href="{{ "images/favicons/apple-icon-60x60.png" | relURL }}">
   <link rel="apple-touch-icon" sizes="72x72" href="{{ "images/favicons/apple-icon-72x72.png" | relURL }}">
@@ -61,18 +64,20 @@
       
     <div class="container">
       <div class="hero">
-        <h1>
-          {{ .Title }}
-        </h1>
-        {{ if .Params.subtitle }}
-        <p class="subtitle">
-          {{ .Params.subtitle }}
-        </p>
-        {{ end }}
-        {{ if .Params.subsubtitle }}
-        <p class="subsubtitle">
-          {{ .Params.subsubtitle }}
-        </p>
+        {{ block "hero" . }}
+          <h1>
+            {{ .Title }}
+          </h1>
+          {{ if .Params.subtitle }}
+          <p class="subtitle">
+            {{ .Params.subtitle }}
+          </p>
+          {{ end }}
+          {{ if .Params.subsubtitle }}
+          <p class="subsubtitle">
+            {{ .Params.subsubtitle }}
+          </p>
+          {{ end }}
         {{ end }}
       </div>
     </div>

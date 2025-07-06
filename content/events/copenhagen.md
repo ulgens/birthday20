@@ -5,9 +5,11 @@ date: "2025-06-21"
 draft: false
 
 params:
-  event_type: "venue"
+  event_type: "meetup"
   event_date: "2025-10-10"
   event_localtime: "15:00"
+  event_tz: "+02:00"
+  event_languages: "English and Danish"
   event_url: "https://djangodenmark.ticketbutler.io/e/django-birthday-copenhagen-2025"
   latitude: 55.6887319
   longitude: 12.5597946
@@ -15,6 +17,8 @@ params:
   city: "Copenhagen"
   venue_name: "Too Old To Die Young"
   venue_address: "Ravnsborggade 14C, 2200 København"
+  social_media:
+    mastodon: "https://fosstodon.org/@djangodenmark/"
 ---
 
 # Django (birth)Day Copenhagen 2025

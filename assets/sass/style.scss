@@ -293,9 +293,17 @@ footer {
     }
   }
 
+  th.date {
+    width: 170px;
+  }
+
+
   tbody {
     tr:nth-child(odd) {
       background: rgba(255, 255, 255, 0.5);
+      margin: 1rem;
+      font-size: 0.8em;
+      letter-spacing: 0.02em;
     }
   }
 

@@ -25,11 +25,11 @@
 
         <table id="events" class="event-table">
           <thead>
-          <tr>
-            <th class="date">When</th>
-            <th>What</th>
-            <th>Host</th>
-          </tr>
+            <tr>
+              <th class="date">When</th>
+              <th>What</th>
+              <th>Host</th>
+            </tr>
           </thead>
           <tbody>
             {{ range sort $events ".Params.event_date" "asc" }}
@@ -37,7 +37,7 @@
                   <td>{{ time.Format "2006-01-01" .Params.event_date }}</td>
                   <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
                   <td>{{ .Params.event_host }}</td>
-                <tr>
+                </tr>
             {{ end }}
           </tbody>
         </table>

@@ -312,11 +312,11 @@ footer {
 
 
   tbody {
-    tr:nth-child(odd) {
+    tr:nth-child(odd) td {
       background: rgba(255, 255, 255, 0.5);
-      margin: 1rem;
-      font-size: 0.8em;
-      letter-spacing: 0.02em;
+    }
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.6);
     }
   }
 

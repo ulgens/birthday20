@@ -5,12 +5,14 @@ date: "2025-06-21"
 draft: false
 
 params:
-  event_type: "meetup"
+  event_type: "in_person"
+  event_category: "meetup"
   event_date: "2025-10-10"
   event_localtime: "15:00"
+  event_host: "Django Denmark"
   event_tz: "+02:00"
   event_languages: "English and Danish"
-  event_url: "https://djangodenmark.ticketbutler.io/e/django-birthday-copenhagen-2025"
+  # event_url: "https://djangodenmark.ticketbutler.io/e/django-birthday-copenhagen-2025"
   latitude: 55.6887319
   longitude: 12.5597946
   country: "Denmark"

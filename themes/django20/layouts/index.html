@@ -8,29 +8,35 @@
     </div>
   </section>
 
+
+
+  {{ $events := (where (.Site.GetPage "/events").Pages.ByDate "published" "!=" "false") }}
+
+  <section class="map" id="events">
+    <div class="container">
+       <article><h1>Explore Events Across Our Global Community!</h1></article>
+    </div>
+    {{ partial "events_map.html" (dict "events" $events "context" .) }}
+  </section>
+
   <section class="events" id="events">
     <div class="container container-events {{ .Params.cssClassSuffix }}">
       <article class="{{ .Params.cssClassSuffix }}">
-
-        {{ $events := .Site.Data.events }}
-
-        {{ partial "events_map.html" (dict "events" $events "context" .) }}
 
         <table id="events" class="event-table">
           <thead>
           <tr>
             <th class="date">When</th>
             <th>What</th>
-            <th>Community</th>
+            <th>Host</th>
           </tr>
           </thead>
           <tbody>
-            {{ range sort $events ".fields.date" "asc" }}
-              {{ $event := .fields }}
+            {{ range sort $events ".Params.event_date" "asc" }}
                 <tr>
-                  <td>{{ $event.date }}</td>
-                  <td><a href="{{ $event.website }}" target="_blank">{{ $event.name | truncate 50 }}</a></td>
-                  <td>{{ $event.community }}</td>
+                  <td>{{ time.Format "2006-01-01" .Params.event_date }}</td>
+                  <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
+                  <td>{{ .Params.event_host }}</td>
                 <tr>
             {{ end }}
           </tbody>

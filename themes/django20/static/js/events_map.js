@@ -13,8 +13,8 @@ const map = L.map("map", {
 }).setView([25, 0], 2.5); // Center the map and initial zoom level
 
 const categoryColors = {
-	conference: "#092E20", // green
-	local_community: "#44B78B", // accent green
+	conference: "#00f8a5", // green
+	meetup: "#005935", // accent green
 };
 
 function getColorByCategory(category) {

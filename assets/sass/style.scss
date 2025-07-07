@@ -5,6 +5,7 @@ $base-color-black: #000;
 
 $theme-color-primary: #00f8a5;
 $theme-color-secondary: #44b0ff;
+$theme-color-tertiary: #fe7abf;
 
 html,
 body,
@@ -165,6 +166,18 @@ section.events {
   border-style: solid;
 }
 
+section.map {
+  background: rgba(0, 0, 0, 0.8);
+  border-width: 5px 0 5px 0;
+  border-color: #000;
+  border-style: solid;
+  article {
+    color: #fff;
+  }
+}
+
+
+
 article {
 
   margin: 40px 0;
@@ -309,4 +322,22 @@ footer {
 
 }
 
+
+// TODO: Properly integrate this CSS into the SASS + theme
+
+:root {
+	--color-django-dark: darken(#00f8a5, 0.8);
+	--color-django-accent: #00f8a5;
+	--color-white: #fff;
+	--color-bg-light: #f8f9fa;
+	--header-height: 120px;
+	--spacing-lg: 2rem;
+	--spacing-sm: 1.2rem;
+}
+
+#map {
+	width: 100%;
+	height: 70vh;
+	min-height: 350px;
+}
 

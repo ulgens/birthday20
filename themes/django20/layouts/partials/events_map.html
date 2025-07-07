@@ -1,48 +1,41 @@
 <!-- Leaflet CSS file -->
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<!-- project CSS file -->
-<link rel="stylesheet" href='{{ "css/events_map.css" | relURL }}'>
 
-<div class="map-container">
-    <header class="header">
-        <h1>Explore Events Across Our Global Community!</h1>
-    </header>
-    <!-- Map -->
-    {{ $events := .events }}
-    <div id="map" aria-label="Django 20th Anniversary Event Locations"></div>
-    <script>
-        const eventsData = {
-            "type": "FeatureCollection",
-            "features": [
-                {{- range $index, $event := $events }}
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "name": {{ $event.fields.name }},
-                        "slug": {{ $event.fields.slug }},
-                        "date": {{ $event.fields.date }},
-                        "address": {{ $event.fields.address }},
-                        "description": {{ $event.fields.description }},
-                        "event_type": {{ $event.fields.event_type }},
-                        "event_category": {{ $event.fields.event_category }},
-                        "community": {{ $event.fields.community }},
-                        "website": {{ $event.fields.website }},
-                        "event_category_label": {{ $event.fields.event_category_label | default $event.fields.event_category }}
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            {{ $event.fields.longitude }},
-                            {{ $event.fields.latitude }}
-                        ]
-                    }
-                }{{ if ne (add $index 1) (len $events) }},{{ end }}
-                {{- end }}
-            ]
-        };
-    </script>
-</div>
+<!-- Map -->
+{{ $events := .events }}
+<div id="map" aria-label="Django 20th Anniversary Event Locations"></div>
+<script>
+    const eventsData = {
+        "type": "FeatureCollection",
+        "features": [
+            {{- range $index, $event := $events }}
+            {
+                "type": "Feature",
+                "properties": {
+                    "name": {{ .Title }},
+                    "slug": {{ .Slug }},
+                    "date": {{ .Params.event_date }},
+                    "address": {{ .Params.venue_address }}, // TODO: Check if online event
+                    "description": {{ .Description }},
+                    "event_type": {{ .Params.event_type }},
+                    "event_category": {{ .Params.event_category }},
+                    "host": {{ .Params.event_host }},
+                    "website": {{ .Params.event_url | default .Permalink }},
+                    "event_category_label": {{ .Params.event_category }}
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        {{ .Params.longitude }},
+                        {{ .Params.latitude }}
+                    ]
+                }
+            }{{ if ne (add $index 1) (len $events) }},{{ end }}
+            {{- end }}
+        ]
+    };
+</script>
 
 <!-- Leaflet JS file -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

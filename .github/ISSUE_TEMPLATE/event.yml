@@ -1,0 +1,126 @@
+name: Create Event
+description: Submit a new event to be added to the community calendar.
+title: "[Event] "
+labels: ["event"]
+assignees: []
+
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title of the Event
+      placeholder: e.g. Django (birth)day Mombasa
+    validations:
+      required: true
+
+  - type: dropdown
+    id: event_type
+    attributes:
+      label: Event Type
+      options:
+        - online
+        - meetup
+        - conference
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Event Date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+
+  - type: input
+    id: local_time
+    attributes:
+      label: Local Time
+      placeholder: e.g. 18:30 (leave empty if TBD)
+
+  - type: input
+    id: timezone
+    attributes:
+      label: Timezone (UTC offset)
+      placeholder: e.g. +03:00
+    validations:
+      required: true
+
+  - type: input
+    id: short_description
+    attributes:
+      label: Short Description
+      placeholder: One-liner description of the event
+    validations:
+      required: true
+
+  - type: textarea
+    id: long_description
+    attributes:
+      label: Long Description
+      description: Markdown supported.
+      placeholder: Detailed event info
+    validations:
+      required: true
+
+  - type: textarea
+    id: how_to_attend
+    attributes:
+      label: How to Attend
+      description: Brief instructions on how to join or participate
+      placeholder: e.g. "Join via Zoom", or "Come with your laptop"
+    validations:
+      required: true
+
+  - type: input
+    id: rsvp
+    attributes:
+      label: RSVP Instructions or URL
+      placeholder: e.g. https://2025.djangocon.africa/
+
+  - type: input
+    id: event_language
+    attributes:
+      label: Event Language
+      placeholder: e.g. Swahili
+    validations:
+      required: true
+
+  - type: input
+    id: venue_name
+    attributes:
+      label: Venue Name
+      placeholder: Only for meetups/conferences
+
+  - type: input
+    id: venue_address
+    attributes:
+      label: Venue Address
+      placeholder: Only for meetups/conferences
+
+  - type: input
+    id: latitude
+    attributes:
+      label: Event Latitude (optional)
+      placeholder: e.g. -4.0435
+
+  - type: input
+    id: longitude
+    attributes:
+      label: Event Longitude (optional)
+      placeholder: e.g. 39.6682
+
+  - type: textarea
+    id: social_media
+    attributes:
+      label: Social Media Accounts (optional)
+      placeholder: One URL per line
+
+  - type: checkboxes
+    id: coc_agreement
+    attributes:
+      label: Code of Conduct
+      description: You must agree to the [Django Code of Conduct](https://www.djangoproject.com/conduct/) to submit this event.
+      options:
+        - label: I agree to abide by the Django Code of Conduct
+          required: true

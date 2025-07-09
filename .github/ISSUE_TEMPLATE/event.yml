@@ -8,26 +8,44 @@ body:
   - type: input
     id: title
     attributes:
-      label: Title of the Event
+      label: Title of the event
       placeholder: e.g. Django (birth)day Mombasa
+    validations:
+      required: true
+
+  - type: input
+    id: event_host
+    attributes:
+      label: Host group
+      placeholder: your community's name or name(s) of organizers
     validations:
       required: true
 
   - type: dropdown
     id: event_type
     attributes:
-      label: Event Type
+      label: Event type
       options:
+        - in_person
         - online
+    validations:
+      required: true
+
+  - type: dropdown
+    id: event_category
+    attributes:
+      label: Event category
+      options:
         - meetup
         - conference
+        - other
     validations:
       required: true
 
   - type: input
     id: date
     attributes:
-      label: Event Date
+      label: Event date
       placeholder: YYYY-MM-DD
     validations:
       required: true
@@ -35,8 +53,8 @@ body:
   - type: input
     id: local_time
     attributes:
-      label: Local Time
-      placeholder: e.g. 18:30 (leave empty if TBD)
+      label: Local time
+      placeholder: e.g. 18:30 ("TBD" if unknown or leave empty if full-day)
 
   - type: input
     id: timezone
@@ -49,7 +67,7 @@ body:
   - type: input
     id: short_description
     attributes:
-      label: Short Description
+      label: Short description
       placeholder: One-liner description of the event
     validations:
       required: true
@@ -57,7 +75,7 @@ body:
   - type: textarea
     id: long_description
     attributes:
-      label: Long Description
+      label: Long description
       description: Markdown supported.
       placeholder: Detailed event info
     validations:
@@ -66,7 +84,7 @@ body:
   - type: textarea
     id: how_to_attend
     attributes:
-      label: How to Attend
+      label: How to attend
       description: Brief instructions on how to join or participate
       placeholder: e.g. "Join via Zoom", or "Come with your laptop"
     validations:
@@ -81,7 +99,7 @@ body:
   - type: input
     id: event_language
     attributes:
-      label: Event Language
+      label: Event language
       placeholder: e.g. Swahili
     validations:
       required: true
@@ -89,38 +107,38 @@ body:
   - type: input
     id: venue_name
     attributes:
-      label: Venue Name
+      label: Venue name
       placeholder: Only for meetups/conferences
 
   - type: input
     id: venue_address
     attributes:
-      label: Venue Address
+      label: Venue address
       placeholder: Only for meetups/conferences
 
   - type: input
     id: latitude
     attributes:
-      label: Event Latitude (optional)
+      label: Event latitude (optional)
       placeholder: e.g. -4.0435
 
   - type: input
     id: longitude
     attributes:
-      label: Event Longitude (optional)
+      label: Event longitude (optional)
       placeholder: e.g. 39.6682
 
   - type: textarea
     id: social_media
     attributes:
-      label: Social Media Accounts (optional)
+      label: Social media accounts (optional)
       placeholder: One URL per line
 
   - type: checkboxes
     id: coc_agreement
     attributes:
       label: Code of Conduct
-      description: You must agree to the [Django Code of Conduct](https://www.djangoproject.com/conduct/) to submit this event.
+      description: The event follows the [Django Code of Conduct](https://www.djangoproject.com/conduct/) or other similar Code of Conduct.
       options:
-        - label: I agree to abide by the Django Code of Conduct
+        - label: Yes, the Django Code of Conduct or other adequate Code of Conduct is applied.
           required: true

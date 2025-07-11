@@ -21,4 +21,6 @@ params:
 
 More information (including how to participate) available at [GitHub](https://github.com/django-community-amateur-radio/w2d-announcement/blob/main/README.md)
 
+A special Django Admin-inspired Certificate is available for those who work the special event station, or SWLs (short wave listeners) can submit time and stations being worked and we will issue certificates for them as well. One could use a Web SDR to monitor without needing a receiver or antenna [as mentioned here](https://wsjtx.groups.io/g/main/topic/websdr_for_wsjtx/79502964).
+
 There is also a [QRZ Page](https://www.qrz.com/db/W2D) with more information on our Web Framework for other "hams" who wonder what W2D is about.

@@ -25,6 +25,7 @@
                 "date_published": {{ $element.Date.Format "2006-02-01T15:04:05-0700" | jsonify }},
                 "event_type": {{ $element.Params.event_type | jsonify }},
                 "event_date": {{ $element.Params.event_date | jsonify }},
+                "event_date": {{ $element.Params.event_date_end | jsonify }},
                 "event_localtime": {{ $element.Params.event_localtime | jsonify }},
                 "event_tz": {{ $element.Params.event_localtime | jsonify }},
                 "city": {{ $element.Params.city | jsonify }},

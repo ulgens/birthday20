@@ -22,12 +22,15 @@ function getColorByCategory(category) {
 }
 
 function renderEvents(geojsonData) {
+  if (!geojsonData) {
+    return
+  }
 	const geojsonLayer = L.geoJSON(geojsonData, {
 		pointToLayer: (feature, latlng) => {
 			const category = feature.properties.event_category;
 			const color = getColorByCategory(category);
-			console.log("Category:", category);
-			console.log("Color:", color);
+			// console.log("Category:", category);
+			// console.log("Color:", color);
 
 			return L.circleMarker(latlng, {
 				radius: 8,
@@ -41,12 +44,25 @@ function renderEvents(geojsonData) {
 		onEachFeature: (feature, layer) => {
 			const props = feature.properties;
 			const eventDate = new Date(props.date);
-			const formattedDate = eventDate.toLocaleDateString("en-US", {
-				weekday: "long",
-				year: "numeric",
-				month: "long",
-				day: "numeric",
-			});
+		  let eventDateEnd = null;
+			if (props.end_date) {
+  			eventDateEnd = new Date(props.end_date);			  
+			}
+			
+		  let formattedDate = eventDate.toLocaleDateString("en-US", {
+			  weekday: "long",
+			  year: "numeric",
+			  month: "long",
+			  day: "numeric",
+		  });		  
+			if (eventDateEnd) {
+			  formattedDate += "-" + eventDateEnd.toLocaleDateString("en-US", {
+				  weekday: "long",
+				  year: "numeric",
+				  month: "long",
+				  day: "numeric",
+			  });
+		  }
 
 			layer.bindPopup(`
                 <a href="${props.website}" target="_blank"><b>${props.name}</b><br></a>

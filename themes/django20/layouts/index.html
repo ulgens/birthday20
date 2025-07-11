@@ -34,7 +34,7 @@
           <tbody>
             {{ range sort $events ".Params.event_date" "asc" }}
                 <tr>
-                  <td>{{ time.Format "2006-01-02" .Params.event_date }}</td>
+                  <td>{{ time.Format "2006-01-02" .Params.event_date }}{{ if (and .Params.event_date_end (not (eq .Params.event_date_end .Params.event_date))) }}»{{ .Params.event_date_end }}{{ end }}</td>
                   <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
                   <td>{{ .Params.event_host }}</td>
                 </tr>

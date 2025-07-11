@@ -6,12 +6,16 @@ draft: false
 
 params:
   event_type: "in_person"
-  event_category: "other"
+  event_category: "sprint"
   event_date: "2025-10-07"
+  event_date_end: "2025-10-09"
   event_tz: "+02:00"
   event_host: "@carltongibson @pauloxnet"
   event_languages: "English"
   event_url: "https://djangomed.eu"
+  latitude: 41.9098137
+  longitude: 3.0864006
+  venue_address: "Palafrugell, Girona, Spain"
 ---
 
 # Django on the Med 🏖️

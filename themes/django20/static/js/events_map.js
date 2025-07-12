@@ -77,8 +77,8 @@ function renderEvents(geojsonData) {
 	// Auto-fit only if there are features
 	if (geojsonData.features.length > 0) {
 		map.fitBounds(geojsonLayer.getBounds(), {
-			padding: [50, 50],
-			maxZoom: 16,
+			//padding: [20, 20],
+			//maxZoom: 14,
 		});
 	}
 }

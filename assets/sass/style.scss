@@ -174,10 +174,10 @@ section.map {
   article {
     color: #fff;
   }
-  margin: 0 auto;
-  @media only screen and (min-width: 800px) {
-      min-width: 800px;
-      max-width: 1200px;
+  
+  #map {
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   @media only screen and (max-width: 800px) {
@@ -191,7 +191,6 @@ article {
 
   margin: 40px 0;
   font-size: 1.5em;
-  text-align: center;
   
   h2 {
     font-size: 2em;

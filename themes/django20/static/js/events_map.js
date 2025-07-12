@@ -15,6 +15,7 @@ const map = L.map("map", {
 const categoryColors = {
 	conference: "#00f8a5", // green
 	meetup: "#005935", // accent green
+	sprint: "#B57EDC" // lavender
 };
 
 function getColorByCategory(category) {
@@ -107,3 +108,20 @@ L.Control.ResetView = L.Control.extend({
 L.control.resetView = (opts) => new L.Control.ResetView(opts);
 
 L.control.resetView({ position: "topleft" }).addTo(map);
+
+var legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function (map) {
+	var div = L.DomUtil.create('div', 'info legend');
+	var categories = Object.keys(categoryColors);
+	
+	categories.forEach(function(category) {
+		div.innerHTML +=
+		  '<i style="background:' + categoryColors[category] + '; width: 18px; height: 18px; display: inline-block; margin-right: 8px;"></i>' +
+		  category.charAt(0).toUpperCase() + category.slice(1) + '<br>';
+	  });
+	
+	  return div;
+	};
+	
+	legend.addTo(map);

@@ -10,7 +10,7 @@ date: "2025-06-21"
 draft: true
 
 params:
-  # Possible values, "online" or "in_person"
+  # Possible values: "in_person", "online", "hybrid" or "radio"
   event_type: "in_person"
   # Possible values: "meetup" or "conference"
   event_category: "meetup"

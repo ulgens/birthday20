@@ -6,7 +6,7 @@ draft: false
 params:
   cssClassSuffix: "main"
   subtitle: "Here's to your future! And to celebrate your past!"
-  subsubtitle: "Celebrating 20 years of the Django web framework - join or initiate a local birthday event, read more about Django's history and check out special online events."
+  subsubtitle: "Celebrating 20 years of the Django web framework - join or initiate a local birthday event, and check out special online events."
 
 ---
 

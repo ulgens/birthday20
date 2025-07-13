@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <section class="timeline">
+    <div class="container container-main {{ .Params.cssClassSuffix }}">
+      <ul>
+      {{ $timeline := (where .Pages.ByDate "published" "!=" "false") }}
+      {{ range sort $timeline ".Params.timeline_date" "asc" }}
+          <li>
+            <time>{{ .Params.timeline_date }}</time>
+  			    {{ .Content }}
+			    </li>
+	    {{ end }}
+	    </ul>
+    </div>
+  </section>
+  <section id="add-timeline">
+    <div class="container container-main {{ .Params.cssClassSuffix }}">
+      <article class="{{ .Params.cssClassSuffix }}">
+        {{ .Content }}
+      </article>
+    </div>
+  </section>
+{{ end }}

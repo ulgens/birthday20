@@ -6,7 +6,7 @@ draft: false
 params:
   cssClassSuffix: "main"
   subtitle: "Here's to your future! And to celebrate your past!"
-  subsubtitle: "Celebrating 20 years of the Django Web Framework - join or initiate a local birthday event, read more about Django's history and check out special online events and merchandise."
+  subsubtitle: "Celebrating 20 years of the Django web framework - join or initiate a local birthday event, read more about Django's history and check out special online events."
 
 ---
 
@@ -14,11 +14,8 @@ params:
 
 Django birthday events are being organized. This website is where it happens and where you can keep your self updated. Have a look at the [map](#map), the [events list](#events).
 
-## A special call for proposals! BIRTHDAYS!
+## A special call for proposals! Birthday celebrations!
 
 To mark the event, we are calling for everyone to do a little thing! Meet new people, or gather old familiar friends - down at the pub, in a park, at your school or online. Nothing is too small.
 
-You can read more about hosting a birthday [here]({{< relref "/add-event.md" >}}).
-
-## 20 years - what happened?
-
+Read more about [hosting a birthday]({{< relref "/add-event.md" >}}) 🎂

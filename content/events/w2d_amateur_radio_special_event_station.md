@@ -5,7 +5,7 @@ date: "2025-07-10"
 draft: false
 
 params:
-  event_type: "virtual"
+  event_type: "radio"
   event_category: "meetup"
   event_date: "2025-07-12"
   event_date_end: "2025-07-26"

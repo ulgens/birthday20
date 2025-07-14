@@ -6,7 +6,7 @@ draft: false
 
 params:
   event_type: "radio"
-  event_category: "meetup"
+  event_category: "other"
   event_date: "2025-07-12"
   event_date_end: "2025-07-26"
   event_host: "Ham Radio Operators"

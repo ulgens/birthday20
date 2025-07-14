@@ -15,7 +15,8 @@ const map = L.map("map", {
 const categoryColors = {
 	conference: "#00f8a5", // green
 	meetup: "#005935", // accent green
-	sprint: "#B57EDC" // lavender
+	sprint: "#B57EDC", // lavender
+	other: "#222222" // lavender
 };
 
 function getColorByCategory(category) {

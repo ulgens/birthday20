@@ -214,7 +214,30 @@ section.timeline {
 	  margin: 0px;
 	  p {
 	    padding: 20px;
+	    a, a:visited, a:active {
+	      color: #FFF;
+	    }
 	  }
+	  blockquote {
+	    font-style: italic;
+	    padding-right: 30px;
+	  }
+    blockquote:before {
+      position: absolute;
+      content: open-quote;
+      font-size: 2em;
+      margin-left: -0.6em;
+      margin-top: -0.4em;
+    }
+    blockquote:after {
+      position: absolute;
+      content: close-quote;
+      font-size: 2em;
+      bottom: 0;
+      right: 0;
+      margin-right: 1.1em;
+      margin-bottom: .2em;
+    }
 	  iframe {
 	    width: 100%;
 	    min-height: 300px;;

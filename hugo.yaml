@@ -22,15 +22,6 @@ outputFormats:
     rel: alternate
     isPlainText: true
 
-outputs:
-  home:
-  - html
-  - rss
-  section:
-  - html
-  - rss
-  - json
-
 # See: https://gohugo.io/content-management/multilingual/
 languages:
   en:

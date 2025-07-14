@@ -10,12 +10,14 @@ date: "2025-06-21"
 draft: true
 
 params:
-  # Possible values, "online" or "in_person"
+  # Possible values: "in_person", "online", "hybrid" or "radio"
   event_type: "in_person"
   # Possible values: "meetup" or "conference"
   event_category: "meetup"
   # YYYY-MM-DD
   event_date: "2025-10-10"
+  # Leave empty if single-day event.
+  event_date_end: ""
   # Local time of event: "HH:MM", "TBD" or "" (if full day and no time)
   event_localtime: "15:00"
   # Timezone UTC offset of the localtime

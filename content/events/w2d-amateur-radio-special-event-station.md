@@ -1,6 +1,6 @@
 ---
 title: "W2D Amateur Radio Special Event Station"
-description: "Work other Django community members via amateur radio and celebrate Django's 20th Birthday"
+description: "Meet other Django community members via amateur radio and celebrate Django's 20th Birthday"
 date: "2025-07-10"
 draft: false
 

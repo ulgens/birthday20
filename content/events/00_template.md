@@ -3,8 +3,7 @@
 title: "Django (birth)Day Copenhagen 2025"
 # PUT A SHORT DESCRIPTION!
 description: "Come celebrate Django with your Django friends, cake, drinks and fun!"
-# This is not important, this is just a datestamp for when the event itself was created
-# (NOT the event date)
+# (NOT the event date - but the publication date, set to today's date)
 date: "2025-06-21"
 # Change this to "false" so the event will appear (the template is disabled)
 draft: true

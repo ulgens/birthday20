@@ -1,7 +1,7 @@
 ---
 title: "Django's 20th birthday in Amsterdam"
 description: "Come celebrate Django with your Django friends, cake, drinks and fun!"
-date: "2025-08-16"
+date: "2025-07-16"
 draft: false
 
 params:

@@ -9,7 +9,7 @@
     🌐 {{ .Params.city }}, {{ .Params.country }}<br>
     🗓️ {{ time.Format "January 2, 2006" .Params.event_date }}{{ if .Params.event_date_end }}-{{ .Params.event_date_end }}{{ else }}{{ if .Params.event_localtime }}, at {{ .Params.event_localtime }} (local time){{ end }}{{ end }}<br>
     📌 {{ if eq .Params.event_type "in_person" }}
-      {{ .Params.venue_name }}{{ if .Params.venue_address }}<br>📮 {{ .Params.venue_address }}{{ end }}
+      {{ .Params.venue_name }}{{ if and .Params.venue_address (not (eq .Params.venue_address .Params.venue_name)) }}<br>📮 {{ .Params.venue_address }}{{ end }}
     {{ else }}
       {{ .Params.event_type }}
     {{ end }}

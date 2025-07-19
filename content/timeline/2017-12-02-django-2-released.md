@@ -10,4 +10,4 @@ params:
 
 ---
 
-Django version 2.0 is released, highlights include: new default URL patterns, mobile-friendly admin, Window expressions for the ORM.
+Django version 2.0 is released, highlights include: New default URL patterns, mobile-friendly admin, Window expressions for the ORM.

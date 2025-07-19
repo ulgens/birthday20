@@ -224,8 +224,11 @@ section.timeline {
         font-size: 80%;
         font-family: monospace;
       }
-
 	  }
+    img {
+      dispay: block;
+      max-width: 100%;
+    }
     &.release p {
       font-size: 80%;
       padding: 10px 20px;

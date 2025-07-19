@@ -9,6 +9,4 @@ params:
 
 ---
 
-Django version 4.0 was released!
-
-Read the [release notes](https://docs.djangoproject.com/en/5.2/releases/4.0/).
+Django version 4.0 is released, highlights include: Template-based form rendering, the pytz dependency is removed, `Meta.constraints` introduces functional expressions, a new Redis cache backend is added ([release notes](https://docs.djangoproject.com/en/5.2/releases/4.0/)).

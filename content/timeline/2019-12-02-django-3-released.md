@@ -9,6 +9,4 @@ params:
 
 ---
 
-Django version 3.0 was released!
-
-Read the [release notes](https://docs.djangoproject.com/en/5.2/releases/3.0/).
+Django version 3.0 is released, highlight include MariaDB support and ASGI support ([release notes](https://docs.djangoproject.com/en/5.2/releases/3.0/)).

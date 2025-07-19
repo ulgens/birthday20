@@ -9,6 +9,4 @@ params:
 
 ---
 
-Django version 5.0 was released!
-
-Read the [release notes](https://docs.djangoproject.com/en/5.2/releases/5.0/).
+Django version 5.0 is released, highlights include: db-computed field defaults, `GeneratedField` is added, and a simplified `.as_field_group` form field template rendering ([release notes](https://docs.djangoproject.com/en/5.2/releases/5.0/)).

@@ -9,6 +9,4 @@ params:
 
 ---
 
-Django version 2.0 was released!
-
-Read the [release notes](https://docs.djangoproject.com/en/5.2/releases/2.0/).
+Django version 2.0 is released, highlights include: new default URL patterns, mobile-friendly admin, Window expressions for the ORM ([release notes](https://docs.djangoproject.com/en/5.2/releases/2.0/)).

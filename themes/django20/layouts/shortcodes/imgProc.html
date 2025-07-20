@@ -18,5 +18,5 @@
   {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
 {{- end -}}
 
-<img src="{{ $new.Permalink }}" alt="{{ $alt }}" class="{{ $class }}" style="{{ $style | safeCSS }}"/>
+<img src="{{ $new.Permalink }}" alt="{{ $alt }}" class="{{ $class }}" style="{{ $style | safeCSS }}" data-action="zoom" data-original="{{ $original }}" />
 

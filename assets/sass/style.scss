@@ -72,9 +72,9 @@ header {
   color: $base-color-fg;
 
   a, a:visited, a:active {
-    text-shadow: $base-color-black 1px 0 2px;
+    // text-shadow: $base-color-black 1px 0 2px;
     font-weight: bold;
-    color: $base-color-fg;
+    color: #000;
     text-decoration: none;
     white-space: nowrap;
   }
@@ -133,11 +133,11 @@ header {
     }
 
     h1 {
-      font-size: 4em;
+      font-size: 3.5em;
       margin: 20px 0;
     }
     p.subtitle {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 40px;
     }
     p.subsubtitle {

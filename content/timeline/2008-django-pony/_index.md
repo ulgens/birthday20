@@ -18,7 +18,7 @@ See also: [Django Pony retrospective on DjangoAdvent](https://github.com/djangoa
 {{< imgProc
 img="django_pony_bryan_veloso.jpg"
 command="Fit"
-options="800x800"
+options="2000x2000"
 alt="Django Pony wallpaper by Bryan Veloso and iStockPhoto"
 class="photo"
 >}}

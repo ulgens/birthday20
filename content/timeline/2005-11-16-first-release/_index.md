@@ -23,7 +23,7 @@ The quote about SVN is referring to the fact that the very first Django installa
 {{< imgProc
 img="screenshot.png"
 command="Fit"
-options="800x800"
+options="2000x2000"
 alt="A screenshot of djangoproject.com's download instructions, archived on August 5 2005."
 class="photo"
 >}}

@@ -1,11 +1,4 @@
 {{ define "main" }}
-  <section id="add-timeline">
-    <div class="container container-main {{ .Params.cssClassSuffix }}">
-      <article class="{{ .Params.cssClassSuffix }}">
-        {{ .Content }}
-      </article>
-    </div>
-  </section>
   <section class="timeline">
     <div class="container container-main {{ .Params.cssClassSuffix }}">
       <ul>
@@ -18,6 +11,13 @@
 			    </li>
 	    {{ end }}
 	    </ul>
+    </div>
+  </section>
+  <section id="add-timeline">
+    <div class="container container-main {{ .Params.cssClassSuffix }}">
+      <article class="{{ .Params.cssClassSuffix }}">
+        {{ .Content }}
+      </article>
     </div>
   </section>
 {{ end }}

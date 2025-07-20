@@ -281,6 +281,10 @@ section.timeline {
 	  top: 50%;
 	  transform: translateY(-50%);
 	  white-space: nowrap;
+	  background: rgba(0,0,0,0.5);
+	  border-radius: 5px;
+	  border: 2px solid rgba(0,0,0,0.5);
+	  padding: 4px;
   }
   li:nth-child(even) time {
 	  left: auto;

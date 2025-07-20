@@ -18,6 +18,8 @@ At this point in time, Django is not on PyPi nor GitHub (which didn't exist unti
 
 In fact, you can still download the 0.90 code [here](http://www.djangoproject.com/download/0.90/tarball/).
 
+This first release contained all the familiar fundamentals of Django: Views, forms, templates, models, admin, database backends and settings.
+
 The quote about SVN is referring to the fact that the very first Django installation instructions looked like this:
 
 {{< imgProc

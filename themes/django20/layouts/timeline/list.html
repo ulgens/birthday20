@@ -13,7 +13,7 @@
       {{ range sort $timeline ".Params.timeline_date" "asc" }}
           <li class="{{ .Params.timeline_type }}">
             <time>{{ .Params.timeline_date }}</time>
-            {{ if .Params.timeline_release }}<p class="release">📦 {{ .Params.timeline_release }} released (<a href="https://docs.djangoproject.com/en/5.2/releases/2.0/" target="_blank">docs</a>)</p>{{ end }}
+            {{ if .Params.timeline_release }}<p class="release">📦 {{ .Params.timeline_release }} released (<a href="https://docs.djangoproject.com/en/5.2/releases/{{ .Params.timeline_release }}/" target="_blank">docs</a>)</p>{{ end }}
   			    {{ .Content }}
 			    </li>
 	    {{ end }}

@@ -121,8 +121,6 @@ header {
 
   }
 
-
-
   .hero {
 
     margin: 40px 0;
@@ -207,8 +205,9 @@ section.timeline {
 	  border-radius: 65px;
 	  color: #fff;
 	  position: relative;
+	  /* NB! #0000 means transparent */
 	  border: 20px solid #0000;
-	  background: linear-gradient(#000000 0 0) content-box,
+	  background: linear-gradient(#222 0 0) content-box,
 		  linear-gradient(var(--c, $theme-color-tertiary) 0 0) padding-box,
 		  linear-gradient(var(--d, 90deg), #0000 75%, #222 0) border-box;
 	  margin: 0px;
@@ -237,6 +236,7 @@ section.timeline {
 	  blockquote {
 	    font-style: italic;
 	    padding-right: 30px;
+	    position: relative;
 	  }
     blockquote:before {
       position: absolute;
@@ -251,8 +251,8 @@ section.timeline {
       font-size: 2em;
       bottom: 0;
       right: 0;
-      margin-right: 1.1em;
-      margin-bottom: .2em;
+      margin-right: 0em;
+      margin-bottom: -1em;
     }
 	  iframe {
 	    width: 100%;

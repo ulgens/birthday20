@@ -2,25 +2,25 @@
   {{ if .Params.show_hero }}
     {{ partial "hero.html" . }}
   {{ end }}
-  <section id="add-timeline">
-    <div class="container container-main {{ .Params.cssClassSuffix }}">
-      <article class="{{ .Params.cssClassSuffix }}">
-        {{ .Content }}
-      </article>
-    </div>
-  </section>
   <section class="timeline">
     <div class="container container-main {{ .Params.cssClassSuffix }}">
       <ul>
       {{ $timeline := (where .Pages.ByDate "published" "!=" "false") }}
       {{ range sort $timeline ".Params.timeline_date" "asc" }}
           <li class="{{ .Params.timeline_type }}">
-            <time>{{ .Params.timeline_date }}</time>
-            {{ if .Params.timeline_release }}<p class="release">📦 {{ .Params.timeline_release }} released (<a href="https://docs.djangoproject.com/en/5.2/releases/2.0/" target="_blank">docs</a>)</p>{{ end }}
+            <time>{{ if .Params.timeline_date_only_year }}{{ time.Format "2006" .Params.timeline_date }}{{ else }}{{ .Params.timeline_date }}{{ end }}</time>
+            {{ if .Params.timeline_release }}<p class="release">📦 {{ .Params.timeline_release }} released (<a href="https://docs.djangoproject.com/en/5.2/releases/{{ .Params.timeline_release }}/" target="_blank">docs</a>)</p>{{ end }}
   			    {{ .Content }}
 			    </li>
 	    {{ end }}
 	    </ul>
+    </div>
+  </section>
+  <section id="add-timeline">
+    <div class="container container-main {{ .Params.cssClassSuffix }}">
+      <article class="{{ .Params.cssClassSuffix }}">
+        {{ .Content }}
+      </article>
     </div>
   </section>
 {{ end }}

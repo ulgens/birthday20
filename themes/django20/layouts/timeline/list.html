@@ -1,4 +1,7 @@
 {{ define "main" }}
+  {{ if .Params.show_hero }}
+    {{ partial "hero.html" . }}
+  {{ end }}
   <section id="add-timeline">
     <div class="container container-main {{ .Params.cssClassSuffix }}">
       <article class="{{ .Params.cssClassSuffix }}">

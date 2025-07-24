@@ -2,6 +2,7 @@
 title: "Happy birthday Django 🎂 🥳 ☺️ 🎁 🌈 🚀 💝 🤗 🦄 🎨"
 date: "2025-07-03"
 draft: false
+show_hero: True
 
 params:
   cssClassSuffix: "main"

@@ -1,49 +1,61 @@
 {{- define "main" -}}
 
-  <section>
-    <div class="container container-main {{ .Params.cssClassSuffix }}">
-      <article class="{{ .Params.cssClassSuffix }}">
-        {{ .Content }}
-    	</article>
-    </div>
-  </section>
+  {{ if .Params.show_landing_page }}
+    {{ partial "landing_page.html" . }}
+  {{ end }}
+  {{ if .Params.show_intro }}
+    {{ partial "intro.html" . }}
+  {{ end }}
+  {{ if .Params.show_hero }}
+    {{ partial "hero.html" . }}
+  {{ end }}
 
+<section>
+  <div class="container container-main {{ .Params.cssClassSuffix }}">
+    <article class="{{ .Params.cssClassSuffix }}">
+      {{ .Content }}
+    </article>
+  </div>
+</section>
 
+{{ $events := (where (.Site.GetPage "/events").Pages.ByDate "published" "!=" "false") }}
 
-  {{ $events := (where (.Site.GetPage "/events").Pages.ByDate "published" "!=" "false") }}
+<section class="map" id="events">
+  <div class="container">
+    <article>
+      <h1>Explore Events Across Our Global Community!</h1>
+    </article>
+  </div>
+  {{ partial "events_map.html" (dict "events" $events "context" .) }}
+</section>
 
-  <section class="map" id="events">
-    <div class="container">
-       <article><h1>Explore Events Across Our Global Community!</h1></article>
-    </div>
-    {{ partial "events_map.html" (dict "events" $events "context" .) }}
-  </section>
+<section class="events" id="events">
+  <div class="container container-events {{ .Params.cssClassSuffix }}">
+    <article class="{{ .Params.cssClassSuffix }}">
 
-  <section class="events" id="events">
-    <div class="container container-events {{ .Params.cssClassSuffix }}">
-      <article class="{{ .Params.cssClassSuffix }}">
+      <table id="events" class="event-table">
+        <thead>
+          <tr>
+            <th class="date">When</th>
+            <th>What</th>
+            <th>Host</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range sort $events ".Params.event_date" "asc" }}
+          <tr>
+            <td>{{ time.Format "2006-01-02" .Params.event_date }}{{ if (and .Params.event_date_end (not (eq
+              .Params.event_date_end .Params.event_date))) }}»{{ .Params.event_date_end }}{{ end }}</td>
+            <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a>
+            </td>
+            <td>{{ .Params.event_host }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
 
-        <table id="events" class="event-table">
-          <thead>
-            <tr>
-              <th class="date">When</th>
-              <th>What</th>
-              <th>Host</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{ range sort $events ".Params.event_date" "asc" }}
-                <tr>
-                  <td>{{ time.Format "2006-01-02" .Params.event_date }}{{ if (and .Params.event_date_end (not (eq .Params.event_date_end .Params.event_date))) }}»{{ .Params.event_date_end }}{{ end }}</td>
-                  <td><a href="{{ .Params.event_url | default .Permalink }}" target="_blank">{{ .Title | truncate 50 }}</a></td>
-                  <td>{{ .Params.event_host }}</td>
-                </tr>
-            {{ end }}
-          </tbody>
-        </table>
-
-    	</article>
-    </div>
-  </section>
+    </article>
+  </div>
+</section>
 
 {{- end -}}

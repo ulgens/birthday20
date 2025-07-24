@@ -2,6 +2,7 @@
 title: "WIP Timeline"
 date: "2025-07-03"
 draft: false
+show_hero: True
 
 params:
   subtitle: "20 years of Django in a collaborative timeline."

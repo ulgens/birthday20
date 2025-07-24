@@ -65,10 +65,8 @@ body {
 }
 
 header {
-
   width: 100%;
   height: 100%;
-
   color: $base-color-fg;
 
   a, a:visited, a:active {
@@ -120,35 +118,33 @@ header {
     }
 
   }
+}
 
+.hero {
+  color: $base-color-fg;
+  margin: 40px 0;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
 
-
-  .hero {
-
-    margin: 40px 0;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 5px;
-
-    @media only screen and (max-width: 1200px) {
-        margin: 0 0;
-    }
-
-    h1 {
-      font-size: 4em;
-      margin: 20px 0;
-    }
-    p.subtitle {
-      font-size: 3em;
-      margin-bottom: 40px;
-    }
-    p.subsubtitle {
-      font-size: 2em;
-      margin-bottom: 40px;
-    }
-
+  @media only screen and (max-width: 1200px) {
+      margin: 0 0;
   }
 
+  h1 {
+    font-size: 4em;
+    margin: 20px 0;
+  }
+
+  p.subtitle {
+    font-size: 3em;
+    margin-bottom: 40px;
+  }
+
+  p.subsubtitle {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
 }
 
 section {
@@ -226,7 +222,7 @@ section.timeline {
       }
 	  }
     img {
-      dispay: block;
+      display: block;
       max-width: 100%;
     }
     &.release p {

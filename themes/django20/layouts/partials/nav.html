@@ -1,0 +1,12 @@
+<div class="nav-container">
+    <div class="logo-and-nav container">
+        <a href="/" class="logo" title="Back to start"><img src='{{ "images/balloon-logo.png" | relURL }}'></a>
+        <nav class="main-nav">
+            {{ with .Site.Menus.main }}
+                {{ range . }}
+                    <a href="{{ .URL | relURL }}" title="{{ .Name }}">{{ .Name }}</a>
+                {{ end }}
+            {{ end }}
+        </nav>
+    </div>
+</div>

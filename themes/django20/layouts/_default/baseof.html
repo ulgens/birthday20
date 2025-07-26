@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
+<html lang="{{ .Site.LanguageCode | default " en" }}">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {{ hugo.Generator }}
 
-	<title>Django 20-years Birthday: {{ .Title }}</title>
-	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <title>Django 20-years Birthday: {{ .Title }}</title>
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.author }}
+  <meta name="author" content="{{ . }}">{{ end }}
 
   {{ block "extrameta" . }}{{ end }}
 
@@ -21,119 +24,55 @@
   {{ template "_internal/twitter_cards.html" . }}
   {{ template "_internal/opengraph.html" . }}
 
-	{{ with .OutputFormats.Get "RSS" -}}
-		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-	{{- end }}
-	{{ with .OutputFormats.Get "JSON" -}}
-		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-	{{- end }}
-  <link rel="apple-touch-icon" sizes="57x57" href="{{ "images/favicons/apple-icon-57x57.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="60x60" href="{{ "images/favicons/apple-icon-60x60.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="72x72" href="{{ "images/favicons/apple-icon-72x72.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ "images/favicons/apple-icon-76x76.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{ "images/favicons/apple-icon-114x114.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="120x120" href="{{ "images/favicons/apple-icon-120x120.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="144x144" href="{{ "images/favicons/apple-icon-144x144.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ "images/favicons/apple-icon-152x152.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/favicons/apple-icon-180x180.png" | relURL }}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{{ "images/favicons/android-icon-192x192.png" | relURL }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicons/favicon-32x32.png" | relURL }}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ "images/favicons/favicon-96x96.png" | relURL }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicons/favicon-16x16.png" | relURL }}">
-  <link rel="manifest" href="{{ "images/favicons/manifest.json" | relURL }}">
+  {{ with .OutputFormats.Get "RSS" -}}
+  {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+  {{- end }}
+  {{ with .OutputFormats.Get "JSON" -}}
+  {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+  {{- end }}
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ " images/favicons/apple-icon-57x57.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ " images/favicons/apple-icon-60x60.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ " images/favicons/apple-icon-72x72.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ " images/favicons/apple-icon-76x76.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ " images/favicons/apple-icon-114x114.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ " images/favicons/apple-icon-120x120.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ " images/favicons/apple-icon-144x144.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ " images/favicons/apple-icon-152x152.png" | relURL }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ " images/favicons/apple-icon-180x180.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ " images/favicons/android-icon-192x192.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ " images/favicons/favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ " images/favicons/favicon-96x96.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ " images/favicons/favicon-16x16.png" | relURL }}">
+  <link rel="manifest" href="{{ " images/favicons/manifest.json" | relURL }}">
   <meta name="msapplication-TileColor" content="#E7E8E6">
-  <meta name="msapplication-TileImage" content="{{ "images/favicons/ms-icon-144x144.png" | relURL }}">
+  <meta name="msapplication-TileImage" content="{{ " images/favicons/ms-icon-144x144.png" | relURL }}">
   <meta name="theme-color" content="#ffffff">
 
 </head>
-<body class="{{ .Params.cssClassSuffix }}">
 
-  <header class="{{ .Params.cssClassSuffix }}">
-    <div class="nav-container">
-    
-      <div class="logo-and-nav container">
-        <a href="/" class="logo" title="Back to start"><img src="{{ "images/balloon-logo.png" | relURL }}"></a>
-        <nav class="main-nav">
-	      {{ with .Site.Menus.main }}
-			      {{ range . }}
-			      <a href="{{ .URL | relURL }}" title="{{ .Name }}">{{ .Name }}</a>
-			      {{ end }}
-	      {{ end }}
+<body {{ with .Params.cssClassSuffix }} class="{{ . }}" {{ end }}>
 
-        </nav>
-      </div>
-    </div>
-      
-    <div class="container">
-      <div class="hero">
-        {{ block "hero" . }}
-          <h1>
-            {{ .Title }}
-          </h1>
-          {{ if .Params.subtitle }}
-          <p class="subtitle">
-            {{ .Params.subtitle }}
-          </p>
-          {{ end }}
-          {{ if .Params.subsubtitle }}
-          <p class="subsubtitle">
-            {{ .Params.subsubtitle }}
-          </p>
-          {{ end }}
-        {{ end }}
-      </div>
-    </div>
-
+  <header {{ with .Params.cssClassSuffix }} class="{{ . }}" {{ end }}>
+    {{ partial "nav.html" . }}
   </header>
 
   <main>
-  	  {{ block "main" . }}{{ end }}
+    {{ if not .Params.hide_hero }}
+      {{ block "hero" . }}
+        {{ partial "hero.html" . }}
+      {{ end }}
+    {{ end }}
+    {{ block "main" . }}{{ end }}
   </main>
 
-
-  <footer class="{{ .Params.cssClassSuffix }}">
-    
-    <div class="container">
-      <div class="footer-columns">
-      
-        <div class="footer-column">
-          <h5>Contact</h5>
-          <p>
-            <a href="https://www.djangoproject.com/">Main Django website</a><br>
-            Add your event<br>
-            Find an event<br>
-          </p>
-          <p>
-            Other questions?
-            <a href="mailto:birthday@djangoproject.com">birthday@djangoproject.com</a>
-          </p>
-          <p class="minor">
-            <a href="{{ relLangURL "about" }}">More about the site</a><br>
-            (c) 2025 Django Software Foundation<br>
-            
-          </p>
-        </div>
-        <div class="footer-column">
-          <a href="/" class="logo"><img src="{{ "images/pony-with-balloons.png" | relURL }}"></a>
-        </div>
-        <div class="footer-column opening-hours">
-        
-          <h5>Credits</h5>
-          <p>
-            Django Birthday Graphics:<br><a href="https://fosstodon.org/@sjbitcode">©Sangeeta Jadoonanan</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>)<br>
-          </p>
-          <p>
-            Website: <a href="https://github.com/django/birthday20/graphs/contributors">django/birthday20 contributors</a><br>
-            Got an idea? <a href="https://github.com/django/birthday20">Contribute to the website</a>.
-          </p>
-        </div>
-      
-      </div>
-    </div>
-      
+  <footer {{ with .Params.cssClassSuffix }} class="{{ . }}" {{ end }}>
+    {{ partial "footer.html" . }}
   </footer>
 
 <script src="/js/zoom-vanilla.min.js"></script>
 
 </body>
+
 </html>

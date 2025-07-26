@@ -1,15 +1,5 @@
 {{- define "main" -}}
 
-  {{ if .Params.show_landing_page }}
-    {{ partial "landing_page.html" . }}
-  {{ end }}
-  {{ if .Params.show_intro }}
-    {{ partial "intro.html" . }}
-  {{ end }}
-  {{ if .Params.show_hero }}
-    {{ partial "hero.html" . }}
-  {{ end }}
-
 <section>
   <div class="container container-main {{ .Params.cssClassSuffix }}">
     <article class="{{ .Params.cssClassSuffix }}">

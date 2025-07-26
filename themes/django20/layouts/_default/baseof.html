@@ -59,11 +59,16 @@
   </header>
 
   <main>
+    {{ if not .Params.hide_hero }}
+      {{ block "hero" . }}
+        {{ partial "hero.html" . }}
+      {{ end }}
+    {{ end }}
     {{ block "main" . }}{{ end }}
   </main>
 
   <footer {{ with .Params.cssClassSuffix }} class="{{ . }}" {{ end }}>
-    {{ partial "footer.html" }}
+    {{ partial "footer.html" . }}
   </footer>
 
 <script src="/js/zoom-vanilla.min.js"></script>

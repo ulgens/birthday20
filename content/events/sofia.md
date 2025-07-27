@@ -49,19 +49,26 @@ linkedin: https://www.linkedin.com/company/hackbulgaria/
 
 Python Meetup @ Sofia is back with a special edition after a short summer break… and we’re throwing a birthday party! 🥳 That’s right! Оur favorite framework Django just turned 20, and we’re celebrating the right way: with a lightning talk, drinks, and surprises!
 
-📣 Talk: 11 years of building software with Django - a celebration of Django's 20th birthday
-👨‍🏫 Speaker: Radoslav Georgiev
+#### 📣 Talk: 11 years of building software with Django - a celebration of Django's 20th birthday
 
-💬 What’s it about?
+#### 👨‍🏫 Speaker: Radoslav Georgiev
+
+#### 💬 What’s it about?
+
 Rado will share what it’s like to build software with Django for over a decade at HackSoft. Expect real-world stories: how they started, why they chose Django, the deep waters they've swum in, near-drownings, and other tasty bits from behind the scenes.
 
-🎤 About the speaker:
+#### 🎤 About the speaker
+
 Radoslav Georgiev is the founder of HackSoft & HackBulgaria, and co-organizer of HackConf. With over 13 years in software development, he’s led countless programming courses and spoken at both local and international conferences.
 
-🍹 After the talk…
+#### 🍹 After the talk...
+
 We’ll toast to Django’s 20th birthday with drinks and treats, kindly provided by our friends at HackSoft. Because a birthday isn’t a birthday without a proper celebration, right?
 
-🎁 Oh, and there will be gifts… but not for Django - for you!
+#### 🎁 Oh, and there will be gifts
+
+...but not for Django - for you!
+
 Expect a fun raffle with exclusive prizes from HackSoft (we’re not allowed to reveal them, but trust us… they’re really good 😉).
 Don’t miss it!
 

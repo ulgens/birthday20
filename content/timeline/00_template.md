@@ -10,6 +10,7 @@ params:
   # milestone = universal milestone of Django/community
   # personal = a personal reflection
   # release = a django release
+  # app = significant external app (like South)
   timeline_type: milestone
   
   # If it's a release, you can add:

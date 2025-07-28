@@ -6,12 +6,12 @@
     </h1>
     {{ if .Params.subtitle }}
     <p class="subtitle">
-        {{ .Params.subtitle }}
+        {{ .Params.subtitle | .RenderString }}
     </p>
     {{ end }}
     {{ if .Params.subsubtitle }}
     <p class="subsubtitle">
-        {{ .Params.subsubtitle }}
+        {{ .Params.subsubtitle | .RenderString }}
     </p>
     {{ end }}
   </div>

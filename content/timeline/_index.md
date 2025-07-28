@@ -5,7 +5,7 @@ draft: false
 
 params:
   subtitle: "20 years of Django in a collaborative timeline."
-  subsubtitle: "WIP: This timeline is pieced together by everyone’s memory and experiences. Is something significant missing? Or do you wanna add your very own milestone? You can do that!"
+  subsubtitle: "WIP: This timeline is pieced together by everyone’s memory and experiences. Is something significant missing? Or do you wanna add your very own milestone? See [instructions](#adding-milestones) for adding or editing entries."
 
 ---
 

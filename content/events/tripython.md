@@ -60,7 +60,7 @@ See the Meetup event to RSPP and for more details: https://www.meetup.com/tripyt
 
 ## How to attend
 
-Get to Palafrugell. More details on the site.
+Get to Boxyard RTP. More details on the Meetup site.
 
 ## Code of Conduct
 

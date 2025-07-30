@@ -34,7 +34,7 @@ body {
   position: relative;
   padding: 0px;
   font-family: "Roboto", sans-serif;
-  background-image: url("{{ "images/django-cake.png" | relURL }}");
+  background-image: url('{{ "images/django-cake.png" | relURL }}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
@@ -77,13 +77,23 @@ header {
     white-space: nowrap;
   }
 
+  a:hover, a:focus {
+    color: $base-color-fg;
+    text-decoration: underline;
+  }
+
   .nav-container {
     background-color: $theme-color-primary;
-    margin-top: 100px;
+    margin-top: 50px;
     border-width: 5px 0 5px 0;
     border-color: #000;
     border-style: solid;
-    padding: 20px;
+    padding: 10px;
+
+    @media only screen and (min-width: 800px) {
+      margin-top: 100px;
+      padding: 20px;
+    }    
   }
 
   .logo-and-nav {
@@ -91,7 +101,13 @@ header {
     align-items: center;
     width: 100%;
     column-gap: 20px;
-    font-size: 1.8em;
+    font-size: 1.3em;
+
+    @media only screen and (min-width: 800px) {
+      column-gap: 20px;
+      font-size: 1.8em;
+    }  
+    
     .logo {
       margin: -70px 0;
     }
@@ -108,15 +124,14 @@ header {
   .logo {
     img {
       display: block;
-      width: 150px;
-    }
-  }
+      width: 100px;
+      margin-right: -10px;
 
-  @media only screen and (max-width: 800px) {
-    .logo img {
-      margin-right: -20px; // This is empty space in the image
+      @media screen and (min-width: 800px) {
+        width: 150px;
+        margin-right: -20px; // This is empty space in the image
+      }
     }
-
   }
 }
 
@@ -132,18 +147,32 @@ header {
   }
 
   h1 {
-    font-size: 3.5em;
+    font-size: 2.2em;
     margin: 20px 0;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 3.5em;
+    }
   }
 
   p.subtitle {
-    font-size: 2.5em;
-    margin-bottom: 40px;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
   }
 
   p.subsubtitle {
-    font-size: 2em;
-    margin-bottom: 40px;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
   }
 }
 
@@ -310,12 +339,32 @@ section.timeline {
 
 article {
 
-  margin: 40px 0;
-  font-size: 1.5em;
+  margin: 30px 0;
+  font-size: 1em;
+
+  @media only screen and (min-width: 800px) {
+      margin: 40px 0;
+      font-size: 1.5em;
+    }
+
+  h1 {
+    font-size: 1.3em;
+    margin: 20px 0;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+  }
 
   h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 20px 0;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 2em;
+      margin: 20px 0;
+    }
   }
 
   p {
@@ -344,11 +393,15 @@ article {
 
 footer {
 
-  margin-top: 500px;
+  margin-top: 300px;
   color: $base-color-fg;
   background: rgba(0, 0, 0, 0.8);
+  font-size: 1em;
 
-  font-size: 1.4em;
+  @media screen and (min-width: 800px) {
+    margin-top: 500px;
+    font-size: 1.4em;
+  }
 
   h5 {
     text-transform: uppercase;
@@ -394,27 +447,28 @@ footer {
       }
     }
   }
+
   @media only screen and (max-width: 800px) {
     .footer-columns {
       display: block;
       padding: 0;
       column-gap: 0;
+
       .logo {
         img {
           display: inline-block;
           width: 50%;
         }
       }
-     .footer-column {
+
+      .footer-column {
         margin-top: 20px;
         width: auto;
         text-align: center;
-     }
+        padding: 0.5rem;
+      }
     }
-
-
-}
-
+  }
 }
 
 .event-table {

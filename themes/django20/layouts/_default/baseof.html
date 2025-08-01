@@ -71,7 +71,11 @@
     {{ partial "footer.html" . }}
   </footer>
 
-<script src="/js/zoom-vanilla.min.js"></script>
+{{ with resources.Get "js/zoom-vanilla.min.js" }}
+  {{ with . | fingerprint "sha256" }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+{{ end }}
 
 </body>
 

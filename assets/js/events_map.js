@@ -45,10 +45,10 @@ function renderEvents(geojsonData) {
 		},
 		onEachFeature: (feature, layer) => {
 			const props = feature.properties;
-			const eventDate = new Date(props.date);
+			const eventDate = new Date(props.date + "T00:00:00Z");
 		  let eventDateEnd = null;
 			if (props.end_date) {
-  			eventDateEnd = new Date(props.end_date);			  
+  			eventDateEnd = new Date(props.end_date + "T00:00:00Z");			  
 			}
 			
 		  let formattedDate = eventDate.toLocaleDateString("en-US", {
@@ -56,6 +56,7 @@ function renderEvents(geojsonData) {
 			  year: "numeric",
 			  month: "long",
 			  day: "numeric",
+			  timeZone: "UTC",
 		  });		  
 			if (eventDateEnd) {
 			  formattedDate += "-" + eventDateEnd.toLocaleDateString("en-US", {
@@ -63,6 +64,7 @@ function renderEvents(geojsonData) {
 				  year: "numeric",
 				  month: "long",
 				  day: "numeric",
+				  timeZone: "UTC",
 			  });
 		  }
 
@@ -123,6 +125,6 @@ legend.onAdd = function (map) {
 	  });
 	
 	  return div;
-	};
-	
-	legend.addTo(map);
+};
+
+legend.addTo(map);

@@ -48,7 +48,7 @@ function renderEvents(geojsonData) {
 			const eventDate = new Date(props.date + "T00:00:00Z");
 		  let eventDateEnd = null;
 			if (props.end_date) {
-  			eventDateEnd = new Date(props.end_date);			  
+  			eventDateEnd = new Date(props.end_date + "T00:00:00Z");			  
 			}
 			
 		  let formattedDate = eventDate.toLocaleDateString("en-US", {

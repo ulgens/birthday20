@@ -434,9 +434,12 @@ footer {
 
     .footer-column {
       width: 33%;
+      p {
+        font-size: 90%;
+      }
     }
 
-    .opening-hours {
+    .credits {
       text-align: right;
     }
 

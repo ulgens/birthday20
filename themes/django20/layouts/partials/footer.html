@@ -4,12 +4,8 @@
             <h5>Contact</h5>
             <p>
                 <a href="https://www.djangoproject.com/">Main Django website</a><br>
-                Add your event<br>
-                Find an event<br>
-            </p>
-            <p>
-                Other questions?
-                <a href="mailto:birthday@djangoproject.com">birthday@djangoproject.com</a>
+                <a href="{{ relLangURL "add-event" }}">Add your event</a><br>
+                <a href="/#events">Find an event</a><br>
             </p>
             <p class="minor">
                 <a href='{{ relLangURL "about" }}'>More about the site</a><br>
@@ -19,7 +15,7 @@
         <div class="footer-column">
             <a href="/" class="logo"><img src='{{ "images/pony-with-balloons.png" | relURL }}'></a>
         </div>
-        <div class="footer-column opening-hours">
+        <div class="footer-column credits">
             <h5>Credits</h5>
             <p>
                 Django Birthday Graphics:<br><a href="https://fosstodon.org/@sjbitcode">©Sangeeta Jadoonanan</a> (<a
